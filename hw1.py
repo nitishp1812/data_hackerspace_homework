@@ -15,10 +15,9 @@ def histogram_times(filename):
     	data_list = list(csv_reader)
     time_column_number = 0
     output_list = np.zeros(24)
-    for i in range(0, len(data_list)):
-    	for j in range(0, len(data_list[i])):
-    		if (data_list[i][j] == 'Time'):
-    			time_column_number = j
+    for i in range(0, len(data_list[0])):
+    	if (data_list[0][i] == 'Time'):
+    		time_column_number = i
     for i in range(1,len(data_list)):
     	if data_list[i][time_column_number]:
             time = ""
