@@ -61,8 +61,8 @@ def normalize(image):
     if (np.shape(image) != (32,32)):
         return None
     image = image.astype(float)
-    max_value = image.max()
-    min_value = image.min()
+    max_value = np.max(image)
+    min_value = np.min(image)
     image = (image - min_value) * (255 / (max_value - min_value))
     return image
 
